@@ -14,7 +14,7 @@ public class Notepad implements Battery {
     public int getBatteryCharge() {
         return batteryCharge;
     }
-
+    //TODO: AK Тут лучше использовать Map а не HashMap(мы обсуждали аналогичный случай с List и ArrayList)
     private HashMap<String, String> phonesBook;
 
     public HashMap<String, String> getPhonesBook() {
@@ -30,6 +30,7 @@ public class Notepad implements Battery {
     public String getPhoneNumber(String name) {
         try {
             if (this.phonesBook.containsKey(name)) {
+                //TODO: Не обязательно писать слово this, т.к. у нас тут нет неопределенности с phonesBook
                 System.out.println(name + " номер телефона: " + this.phonesBook.get(name));
                 return this.phonesBook.get(name);
             } else {
@@ -41,7 +42,7 @@ public class Notepad implements Battery {
         }
     }
 //эксепшн, если нет такого имени в списке
-
+    //TODO: AK эксепшн класс лучше сделать отдельно, вынести за Notepad класс
     public class NoSuchContactException extends Exception {
 
         public NoSuchContactException() {
@@ -68,7 +69,7 @@ public class Notepad implements Battery {
     }
 
     //эксепшн для уже существующего контакта
-
+    //TODO: AK эксепшн класс лучше сделать отдельно, вынести за Notepad класс
     public class DuplicateContactException extends Exception {
         public DuplicateContactException() {
         }
