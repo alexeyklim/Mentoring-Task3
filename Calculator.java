@@ -8,7 +8,9 @@ public class Calculator implements Battery {
     public void setBatteryCharge(int batteryCharge) {
         this.batteryCharge = batteryCharge;
     }
-
+    //TODO: AK Опять же не понятен смысл Battery интерфейса, т.к. тут есть свои методы для работы с полем batteryCharge
+    //Если немножно развить идею, наверное, было бы правильнее создать некий абстрактный класс, например 'PortableDevice' в котором
+    // будет поле batteryCharge и свои методы и от этого класса наследовать все наши устройства
     public int getBatteryCharge() {
         return batteryCharge;
     }
