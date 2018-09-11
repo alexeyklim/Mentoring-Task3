@@ -6,6 +6,15 @@ public class Clock_calculator implements Battery {
     private Calculator calculator;
     private int batteryCharge;
 
+    //TODO: AK Тут применена композиция, как и ожидалось, но все-таки идею нужно ненмного доработать.
+    // Сейчас пользователь который работает с часами-калькулятором чтобы узнать, например, время, может это сделать только
+    // через объект Clock и это не совсем правильно.
+    // Пользователю по идее должны быть доступны методы часов-калькулятора с помощью которых он непосредственно может узнать время
+    // например : 
+    //          public void displayTime() {
+    //                              clock.displayTime();
+    //                                   }
+    //
     public Clock getClock() {
         return clock;
     }
